@@ -13,7 +13,7 @@ def faceDetector(grayScaleImg, scaleFactor):
     return trainded_face_data.detectMultiScale(grayScaleImg, scaleFactor, minNeighbors=3)
     
 def smileDetector(grayScaleImg, scaleFactor):
-    return trainded_smile_data.detectMultiScale(grayScaleImg, scaleFactor, minNeighbors=25)
+    return trainded_smile_data.detectMultiScale(grayScaleImg, scaleFactor, minNeighbors=20)
 
  
 def faceAndSmileDetector(img, faceScaleFactor=1.1, smileScaleFactor=1.1):
@@ -57,7 +57,7 @@ def detectFromWebcam():
         if(not successful_frame_read):
             key=-1;
 
-        faceAndSmileDetector(frame, 1.2, 1.2)
+        faceAndSmileDetector(frame, 1.7, 1.7)
 
         cv2.imshow("Face from Webcam detector", frame)
         key = cv2.waitKey(1)
